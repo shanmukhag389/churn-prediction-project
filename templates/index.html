@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+</head>
+
+<body>
+
+    <h1>Customer Churn Prediction using Machine Learning</h1>
+
+    <form action="/predict" method="post">
+
+    <label>Senior Citizen</label><br>
+
+    <select name="senior_citizen">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+    </select>
+
+    <br><br>
+
+    <label>Partner</label><br>
+
+    <select name="partner">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+    </select>
+
+    <br><br>
+
+    <label>Tenure Months</label><br>
+
+    <input
+        type="number"
+        name="tenure"
+        required
+    >
+
+    <br><br>
+
+    <button type="submit">
+        Predict
+    </button>
+
+</form>
+
+{% if senior %}
+
+<hr>
+
+<h2>Data received by FastAPI</h2>
+
+<p><strong>Senior Citizen:</strong> {{ senior }}</p>
+
+<p><strong>Partner:</strong> {{ partner }}</p>
+
+<p><strong>Tenure:</strong> {{ tenure }}</p>
+
+{% endif %}
+
+</body>
+
+</html>
